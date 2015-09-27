@@ -1,4 +1,5 @@
-$(document).ready(function(){
+
+$(document).ready(function(){ 
   $('#zombie-to-english-btn').click(function(event){
     unzombify();
     return false;
@@ -19,7 +20,14 @@ $(document).ready(function(){
     // 6. "o" or "O" is replaced by "rrrRr"
     // 7. "u" or "U" is replaced by "rrrrRr"
     // 8. "r" or "R' is replaced by "RR"
-    $('#zombie').val($('#english').val());
+    var input = $('#english').val();
+    input = input.replace(/r$/g, "rh");
+    input = input.replace(/a/gi, "hra");
+    input = input.replace(/e/gi, "rr");
+    input = input.replace(/i/gi, "rrRr");
+    input = input.replace(/o/gi, "rrrRr");
+    input = input.replace(/u/gi, "rrrrRr");
+    $('#zombie').val(input);
   }
 
   function unzombify(){
@@ -29,4 +37,6 @@ $(document).ready(function(){
 
   $('#english').on("keyup", zombify);
 
+
 });
+
