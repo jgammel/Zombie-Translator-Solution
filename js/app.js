@@ -20,6 +20,8 @@ $(document).ready(function(){
     input = input.replace(/o/ig, "rrrRr"); // 6. "o" or "O" is replaced by "rrrRr"
     input = input.replace(/u/ig, "rrrrRr"); // 7. "u" or "U" is replaced by "rrrrRr"
     input = input.replace(/r/ig, "RR"); // 8. "r" or "R' is replaced by "RR"
+    input = input.replace(/(food)|(money)|(you)/ig, "BRRRAINSSsssss"); //turn certain words into brains
+    input = input.replace(/z/ig, "gurgg"); //turn "z" or "Z" into gurgg
     $('#zombie').val(input);
   }
 
